@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-white bg-neutral-950 font-poppins pt-32 pl-32 tracking-wide pb-64
+}
+
+h1, h2 {
+  @apply text-white font-semibold
+}
+
+.no-scrollbar {
+  /* Firefox */
+  scrollbar-width: none;
+  /* Internet Explorer 10+ */
+  -ms-overflow-style: none;
+  /* Webkit */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
