@@ -1,5 +1,5 @@
 import { marvelLogo, marvelVideo, dcLogo, dcVideo, starLogo, starVideo, natgeoLogo, natgeoVideo } from "../assets/assets"
-import { Popcorn, Cat } from "phosphor-react"
+import { Popcorn, Cat, GithubLogo, InstagramLogo } from "phosphor-react"
 import { typesData } from "../types/type"
 
 
@@ -7,12 +7,14 @@ export const navLinks:typesData[] = [
   {
     id: 1,
     title: 'watch',
-    icon: Popcorn
+    icon: Popcorn,
+    link: '/'
   },
   {
     id: 2,
     title: 'people',
-    icon: Cat
+    icon: Cat,
+    link: '/profile'
   },
 ]
 
@@ -36,6 +38,21 @@ export const studio:typesData[] = [
     id: 4,
     image: natgeoLogo,
     video: natgeoVideo,
+  },
+]
+
+export const footer:typesData[] = [
+  {
+    id: 1,
+    title: 'Github',
+    link: 'https://github.com/fadlandaris',
+    icon: GithubLogo,
+  },
+  {
+    id: 2,
+    title: 'Instagram',
+    link: 'https://instagram.com/fadlandaris',
+    icon: InstagramLogo,
   },
 ]
 

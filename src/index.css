@@ -5,11 +5,15 @@
 @tailwind utilities;
 
 body {
-  @apply text-white bg-black font-poppins pt-24 pl-32 tracking-wide pb-64
+  @apply text-white bg-black font-poppins pt-24 md:pl-32 tracking-wide pb-24
 }
 
 h1, h2 {
   @apply text-white font-semibold 
+}
+
+p {
+  @apply opacity-70
 }
 
 .no-scrollbar {

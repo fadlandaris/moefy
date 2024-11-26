@@ -14,14 +14,14 @@ const TrendingCard: React.FC<DataProps> = ({ data }) => {
   return (
     <>
       {data.slice(0, 1).map((item, i) => (
-        <div key={i} className='relative w-full h-full'>
+        <div key={i} className='relative w-full h-full '>
           <img src={IMAGE_BASE_URL + item.backdrop_path} alt={item.original_name} className='w-full h-full object-cover' />
           <div className=' bg-neutral-950/70 backdrop-blur-sm w-full h-full flex flex-col gap-y-8 items-start p-12 absolute top-1/2  rounded-3xl transform -translate-y-1/2'>
             <p className='font-medium uppercase text-yellow-300 flex items-center gap-x-2'><Trophy weight='fill'/> Top 1 Trending</p>
             <div className='text-4xl'>
-              <h2>Read Movie</h2>
-              <h2>Series Anywhere</h2>
-              <h2>at Anytime</h2>
+              <h2>Discover Movies</h2>
+              <h2>Explore Series</h2>
+              <h2>Anytime, Anywhere</h2>
             </div>
             <p className='w-[50%] font-light'>Read your most liked movies or series completely Free</p>
             <Link to={`/movie/${item.id}-${slugify(item.original_title || item.original_name)}`}>

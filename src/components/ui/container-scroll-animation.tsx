@@ -29,9 +29,9 @@ export const ContainerScroll = ({  children }: { children: React.ReactNode }) =>
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
-    <div className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20" ref={containerRef}>
+    <div className="h-[70rem] flex items-center justify-center relative md:p-20" ref={containerRef}>
       <div
-        className="py-10 md:py-40 w-full relative"
+        className=" md:py-20 w-full relative "
         style={{ perspective: "1000px",}}>
         <Card rotate={rotate} translate={translate} scale={scale}>
           {children}
@@ -53,8 +53,8 @@ export const Card = ({
 }) => {
   return (
     <motion.div
-      style={{ rotateX: rotate, scale, boxShadow:"0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",}} className=" -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full shadow-2xl">
-      <div className=" h-full w-full overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-950 to-black border-2 border-neutral-800 p-6 ">
+      style={{ rotateX: rotate, scale, boxShadow:"0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",}} className="  mx-auto h-[30rem] md:h-[40rem] shadow-2xl">
+      <div className=" h-full w-full overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-950 to-black border-2 border-neutral-900  p-4 sm:p-6 ">
         {children}
       </div>
     </motion.div>

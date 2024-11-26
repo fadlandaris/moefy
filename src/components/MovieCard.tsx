@@ -38,11 +38,11 @@ const MovieCard: React.FC<dataProps> = ({ genreId }) => {
   
   return (
     <main className="">
-      <Swiper modules={[Navigation, Pagination]} slidesPerView={3} className="h-full">
+      <Swiper modules={[Navigation, Pagination]} breakpoints={{ 425: {slidesPerView: 1}, 768: {slidesPerView: 2}, 1024: {slidesPerView: 3}}} className="h-full">
         {movieDataByGenres.slice(0, 7).map((item, i) => (
           <SwiperSlide key={i}>
              <Link to={`/movie/${item.id}-${slugify(item.original_title || item.original_name)}`}>
-              <div className="rounded-3xl p-4 hover:p-0 transition-all duration-500 cursor-pointer overflow-hidden ">
+              <div className="rounded-3xl sm:p-4 hover:p-0 transition-all duration-500 cursor-pointer overflow-hidden ">
                 <div className="mb-4 overflow-hidden rounded-3xl">
                   <img src={IMAGE_BASE_URL + item.backdrop_path} alt="" className="w-full h-full object-cover " />
                 </div>
@@ -57,8 +57,8 @@ const MovieCard: React.FC<dataProps> = ({ genreId }) => {
                     <div className="p-1 rounded-full bg-gradient-to-b from-neutral-900 to-neutral-950 text-red-400 text-[12px]"><Heart weight="fill"/></div>
                     <p className="opacity-70 text-[12px]">{item.vote_average.toFixed(1)}</p>
                   </div>
-                    <p className='font-semibold mb-2'>{item.original_title}</p>
-                    <p className="text-text text-[12px] mb-2">{item.overview.split(' ').slice(0, 9).join(' ')}</p>
+                    <p className='font-semibold mb-2 opacity-100'>{item.original_title}</p>
+                    <p className="text-text text-[12px] mb-2">{item.overview.split(' ').slice(0, 6).join('  ')}</p>
                   </div>
                 </div>
               </div>

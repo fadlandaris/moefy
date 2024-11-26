@@ -28,7 +28,7 @@ const TrendingList: React.FC<DataProps> = ({ data }) => {
                     <img src={IMAGE_BASE_URL + item.poster_path} alt="" />
                   </div>
                   <div>
-                    <p className='font-medium'>{item.original_title || item.original_name}</p>
+                    <p className='font-medium '>{item.original_title || item.original_name}</p>
                     <p className='text-[12px] font-light text-text '> {item.vote_average.toFixed(1)}</p>
                   </div>
                 </div>

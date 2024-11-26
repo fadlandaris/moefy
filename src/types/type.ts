@@ -6,6 +6,7 @@ export interface typesData {
   video?: string;
   image?: string;
   genre?: string;
+  link? : string
 }
 
 export interface MovieTypes {
