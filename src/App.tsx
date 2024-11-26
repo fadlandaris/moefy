@@ -1,15 +1,14 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
-import Navbar from "./components/Navbar"
 import Sidebar from "./components/Sidebar"
-
+import MovieDetails from "./pages/MovieDetails"
 const App = () => {
   return (
-    <main className="p-4">
-      <Navbar/>
+    <main className="pr-10">
       <Sidebar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/movie/:id" element={<MovieDetails />} />
       </Routes>
     </main>
   )

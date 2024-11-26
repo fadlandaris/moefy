@@ -1,6 +1,10 @@
+const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}",],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   mode: "jit",
+  darkMode: "class", // Added darkMode configuration
   theme: {
     extend: {
       colors: {
@@ -9,7 +13,7 @@ module.exports = {
         text: "#939aa5"
       },
       fontFamily: {
-        poppins: ['Poppins', ],
+        poppins: ['Poppins'],
       },
     },
     screens: {
@@ -21,5 +25,17 @@ module.exports = {
       xl: "1700px",
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
 };
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

@@ -9,15 +9,16 @@ export interface typesData {
 }
 
 export interface MovieTypes {
+  title: any;
   adult: boolean;
   backdrop_path: string;
   first_air_date?: string; 
   genre_ids: number[];
-  id: number;
+  id?: number;
   media_type: string;
   name?: string; 
   origin_country?: string[]; 
-  original_title?: string;
+  original_title?: any;
   original_language: string;
   original_name?: string; 
   overview: string;
@@ -26,4 +27,8 @@ export interface MovieTypes {
   vote_average: number;
   vote_count: number;
   release_date: string;
+  tagline: string;
+  homepage: string;
+  runtime: number;
+  budget: number;
 }

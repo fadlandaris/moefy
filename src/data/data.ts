@@ -1,5 +1,5 @@
 import { marvelLogo, marvelVideo, dcLogo, dcVideo, starLogo, starVideo, natgeoLogo, natgeoVideo } from "../assets/assets"
-import { VideoCamera, User, Bookmarks, Star } from "phosphor-react"
+import { Popcorn, Cat } from "phosphor-react"
 import { typesData } from "../types/type"
 
 
@@ -7,22 +7,12 @@ export const navLinks:typesData[] = [
   {
     id: 1,
     title: 'watch',
-    icon: VideoCamera
+    icon: Popcorn
   },
   {
     id: 2,
     title: 'people',
-    icon: User
-  },
-  {
-    id: 3,
-    title: 'bookmarks',
-    icon: Bookmarks
-  },
-  {
-    id: 4,
-    title: 'star',
-    icon: Star
+    icon: Cat
   },
 ]
 

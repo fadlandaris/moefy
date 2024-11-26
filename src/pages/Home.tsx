@@ -29,11 +29,11 @@ const Home = () => {
   return (
     <main className="rounded-3xl">
       <div className="h-[30rem] grid grid-cols-3 gap-x-6">
-        <div className="col-span-2 rounded-2xl overflow-hidden">
+        <div className="col-span-2 rounded-3xl overflow-hidden">
           <TrendingCard data={topTrendingData} />
         </div>
 
-        <div className="p-8 bg-gradient-to-b from-secondary to-neutral-950 rounded-3xl overflow-y-auto no-scrollbar">
+        <div className="p-8 bg-gradient-to-b from-neutral-950 to-black rounded-3xl overflow-y-auto no-scrollbar">
           <div className="flex flex-col gap-y-6">
             <p className='font-semibold text-2xl'>Top Trending</p>
             <TrendingList data={topTrendingData} />
@@ -45,11 +45,11 @@ const Home = () => {
         <div className="flex justify-between gap-x-6 ">
           <Studio data={studioData}/>
         </div>
-        <div className='h-[1px] group-hover:opacity-0 group-hover:mt-0 transition-all duration-500 bg-text/10 rounded-3xl mt-10'/>
+        {/* <div className='h-[1px] group-hover:opacity-0 group-hover:mt-0 transition-all duration-500 bg-text/10 rounded-3xl mt-10'/> */}
       </div>
       
 
-      <div className="mt-10 rounded-3xl ">
+      <div className="mt-10 ">
         <GenreLists/>
       </div>
     </main>
