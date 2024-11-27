@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   const [footerData] = useState(footer)
 
   return (
-    <footer className="mt-10 flex justify-between">
+    <footer className="mt-20 flex justify-between">
 
       <div className="flex justify-start gap-x-6">
         {footerData.map((item, i) => (

@@ -1,3 +1,4 @@
+import PROFILE from './profile.jpg'
 import Logo from './logo.png'
 import marvelLogo from './marvel.png'
 import natgeoLogo from './natgeo.png'
@@ -10,6 +11,7 @@ import starVideo from './starwars.mp4'
 import IMDB from './imdb.png'
 
 export {
+  PROFILE,
   Logo,
   marvelLogo,
   marvelVideo,

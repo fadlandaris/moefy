@@ -13,7 +13,8 @@ const getMovieByGenreId = (id: number) => {
   return axios.get(`${BASE_URL}/discover/movie?api_key=${API_TOKEN}&with_genres=${id}`);
 };
 
-const searchMovies = (query: string) => {
+// search function
+const getSearchMovies = (query: string) => {
   return axios.get(`${BASE_URL}/search/movie`, {
     params: {
       api_key: API_TOKEN,
@@ -23,13 +24,14 @@ const searchMovies = (query: string) => {
   });
 };
 
-const getMovieById = (id: number) => {
+// buat pages movie details
+const getMovieDetailsById = (id: number) => {
   return axios.get(`${BASE_URL}/movie/${id}?api_key=${API_TOKEN}`);
 };
 
 export default {
   getTrendingMovies,
   getMovieByGenreId,
-  searchMovies,
-  getMovieById, 
+  getSearchMovies,
+  getMovieDetailsById, 
 };

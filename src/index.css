@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply text-white bg-black font-poppins pt-24 md:pl-32 tracking-wide pb-24
+  @apply text-white bg-black font-poppins md:pt-16 md:pl-32 tracking-wide pb-12
 }
 
 h1, h2 {
@@ -26,3 +26,5 @@ p {
     display: none;
   }
 }
+
+

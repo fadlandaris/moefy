@@ -32,4 +32,5 @@ export interface MovieTypes {
   homepage: string;
   runtime: number;
   budget: number;
+  movieData: any;
 }

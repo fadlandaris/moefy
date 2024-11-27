@@ -27,30 +27,30 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="rounded-3xl">
-      <div className="h-[30rem] grid grid-cols-1 gap-y-8 md:grid-cols-3 gap-x-6 ">
-        <div className=" md:col-span-2 rounded-3xl overflow-hidden">
-          <TrendingCard data={topTrendingData} />
-        </div>
-
-        <div className="p-8 bg-gradient-to-b from-neutral-950 to-black rounded-3xl overflow-y-auto no-scrollbar">
-          <div className="flex flex-col gap-y-6">
-            <p className='font-semibold text-2xl opacity-100'>Top Trending</p>
-            <TrendingList data={topTrendingData} />
-          </div>
-        </div>
+    <>
+    <div className=" grid grid-cols-1 gap-y-8 md:grid-cols-3 gap-x-6 ">
+      <div className=" md:col-span-2 ">
+        <TrendingCard data={topTrendingData} />
       </div>
 
-      <div className="mt-10 md:mt-6 ">
-        <div className="grid grid-cols-2 gap-y-6 sm:grid-cols-3 sm:gap-y-6 md:gap-y-0 md:grid-cols-4 gap-x-6 ">
-          <Studio data={studioData}/>
+      <div className="p-8 h-[20rem] md:h-[30rem] bg-gradient-to-b from-neutral-950 to-black rounded-2xl overflow-y-auto no-scrollbar">
+        <div className="flex flex-col gap-y-4">
+          <p className='font-semibold text-2xl opacity-100 mb-6'>Top 10 Trending</p>
+          <TrendingList data={topTrendingData} variant={`trending`} />
         </div>
-        {/* <div className='h-[1px] group-hover:opacity-0 group-hover:mt-0 transition-all duration-500 bg-text/10 rounded-3xl mt-10'/> */}
       </div>
-      <div className="mt-10 ">
-        <GenreLists/>
+    </div>
+
+    <div className="mt-10 md:mt-6 ">
+      <div className="grid grid-cols-2 gap-y-6 sm:grid-cols-4 sm:gap-y-6 md:gap-y-0 gap-x-6 ">
+        <Studio data={studioData}/>
       </div>
-    </main>
+      {/* <div className='h-[1px] group-hover:opacity-0 group-hover:mt-0 transition-all duration-500 bg-text/10 rounded-3xl mt-10'/> */}
+    </div>
+    <div className="mt-10 ">
+      <GenreLists/>
+    </div>
+    </>
   );
 };
 

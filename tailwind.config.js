@@ -14,6 +14,9 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins'],
       },
+      animation: {
+        spinSlow: 'spin 1.5s linear infinite', 
+      },
     },
     screens: {
       xs: "480px",

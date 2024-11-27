@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import { slugify } from "../utils/Slugify";
-import { Heart } from "phosphor-react";
+
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
@@ -37,28 +37,27 @@ const MovieCard: React.FC<dataProps> = ({ genreId }) => {
   // console.log(movieDataByGenres)
   
   return (
-    <main className="">
-      <Swiper modules={[Navigation, Pagination]} breakpoints={{ 425: {slidesPerView: 1}, 768: {slidesPerView: 2}, 1024: {slidesPerView: 3}}} className="h-full">
+    <main >
+      <Swiper modules={[Navigation, Pagination]} breakpoints={{ 425: {slidesPerView: 1,}, 768: {slidesPerView: 2}, 1024: {slidesPerView: 3,}, 1700: {slidesPerView: 4,}}} spaceBetween={30}  >
         {movieDataByGenres.slice(0, 7).map((item, i) => (
-          <SwiperSlide key={i}>
+          <SwiperSlide key={i} >
              <Link to={`/movie/${item.id}-${slugify(item.original_title || item.original_name)}`}>
-              <div className="rounded-3xl sm:p-4 hover:p-0 transition-all duration-500 cursor-pointer overflow-hidden ">
-                <div className="mb-4 overflow-hidden rounded-3xl">
+              <div className="relative group transition-all duration-500 cursor-pointer overflow-hidden ">
+                <div className="relative mb-4 overflow-hidden rounded-lg">
                   <img src={IMAGE_BASE_URL + item.backdrop_path} alt="" className="w-full h-full object-cover " />
+                  <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 absolute inset-0 flex justify-center items-center bg-neutral-950 bg-opacity-80">
+                  Read Now
                 </div>
-                <div className="flex justify-start gap-x-4 items-start py-2 ">
+                </div>
+                <div className="flex justify-start gap-x-4 items-start">
                   <div className=" ">
                     <div className="w-[2.5rem] h-[2.5rem] overflow-hidden rounded-full">
                       <img src={IMAGE_BASE_URL + item.poster_path} alt="" className="w-full h-ful object-cover" />
                     </div>
                   </div>
                   <div>
-                  <div className=" flex items-center gap-x-2 mb-2 ">
-                    <div className="p-1 rounded-full bg-gradient-to-b from-neutral-900 to-neutral-950 text-red-400 text-[12px]"><Heart weight="fill"/></div>
-                    <p className="opacity-70 text-[12px]">{item.vote_average.toFixed(1)}</p>
-                  </div>
-                    <p className='font-semibold mb-2 opacity-100'>{item.original_title}</p>
-                    <p className="text-text text-[12px] mb-2">{item.overview.split(' ').slice(0, 6).join('  ')}</p>
+                    <p className='font-semibold  opacity-100'>{item.title}</p>
+                    <p className="text-text text-[12px] ">{item.overview.split(' ').slice(0, 6).join('  ')}</p>
                   </div>
                 </div>
               </div>
