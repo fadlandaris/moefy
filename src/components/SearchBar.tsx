@@ -6,12 +6,10 @@ import { AxiosResponse } from "axios";
 import Api from "../service/Api";
 import TrendingList from "./TrendingList";
 
-
 const SearchBar = () => {
   const [querySearch, setQuerySearch] = useState('');
   const [resultsData, setResults] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const searchTimeout = setTimeout(() => {
@@ -21,19 +19,15 @@ const SearchBar = () => {
           return;
         }
 
-        setLoading(true);
         setError(null);
 
         try {
           const resp: AxiosResponse = await Api.getSearchMovies(querySearch);
-          const searchResults = resp.data.results
-          // console.log(searchResults)
+          const searchResults = resp.data.results;
           setResults(searchResults);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
-          // console.log(error);
-          setError(error);
-        } finally {
-          setLoading(false);
+          setError('Failed to fetch search results',);
         }
       };
 
@@ -87,13 +81,12 @@ const SearchBar = () => {
         </Link>
       </div>
 
-      {/* {loading && <p>Loading...</p>} */}
       {error && <p>{error}</p>}
       {resultsData.length > 0 && (
-        <div className="absolute z-50 bg-gradient-to-b p-8  from-neutral-950 to-black top-36 rounded-3xl flex flex-col w-[25rem] h-[30rem] overflow-hidden">
+        <div className="absolute z-50 bg-gradient-to-b p-8 from-neutral-950 to-black top-36 rounded-3xl flex flex-col w-[25rem] h-[30rem] overflow-hidden">
           <p className="mb-6 text-[12px]">Results : {querySearch}</p>
-          <div className="overflow-hidden overflow-y-auto no-scrollbar ">
-            <TrendingList data={resultsData} variant={`search`}/>
+          <div className="overflow-hidden overflow-y-auto no-scrollbar">
+            <TrendingList data={resultsData} variant="search" />
           </div>
         </div>
       )}
