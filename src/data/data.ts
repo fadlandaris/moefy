@@ -1,5 +1,5 @@
 import { marvelLogo, marvelVideo, dcLogo, dcVideo, starLogo, starVideo, natgeoLogo, natgeoVideo } from "../assets/assets"
-import { Popcorn, Cat, GithubLogo, InstagramLogo } from "phosphor-react"
+import { Popcorn, GithubLogo, InstagramLogo } from "phosphor-react"
 import { typesData } from "../types/type"
 
 

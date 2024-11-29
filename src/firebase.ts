@@ -27,8 +27,11 @@ const signup = async (name: string, email: string, password: string) => {
       name,
     });
   } catch (error) {
-    console.log(error);
-    toast.error(error.code)
+    let errorMessage = ""
+    if (error instanceof Error) {
+      errorMessage = error.message
+    }
+    toast.error(errorMessage.split('/')[1].split('-').join(' ').replace(')', '').replace('.', ''))
   }
 };
 
@@ -36,8 +39,11 @@ const login = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (error) {
-    console.log(error);
-    toast.error(error.code)
+    let errorMessage = ""
+    if (error instanceof Error) {
+      errorMessage = error.message
+    }
+    toast.error(errorMessage.split('/')[1].split('-').join(' ').replace(')', '').replace('.', ''))
   }
 };
 
