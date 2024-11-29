@@ -14,8 +14,20 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins'],
       },
+      keyframes: {
+        slideIn: {
+          '0%': { transform: 'translateY(-10%)' },
+          '100%': { transform: 'translateY(0)' },
+        },  
+        blurToNone: {
+          '0%': { filter: 'blur(5px)' },
+          '100%': { filter: 'blur(0)' },
+        },
+      },
       animation: {
         spinSlow: 'spin 1.5s linear infinite', 
+        slideIn: 'slideIn 0.5s ease-in-out',
+        blurToNone: 'blurToNone 1s  ease-in-out',
       },
     },
     screens: {

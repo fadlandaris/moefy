@@ -14,7 +14,7 @@ const TrendingList: React.FC<DataProps> = ({ data, variant = 'search' }) => {
   // console.log(data)
   return (
     <>
-      {data.slice(1, 10).map((item, i) => (
+      {data.slice(1, 11).map((item, i) => (
         <Link key={i} to={`/movie/${item.id}-${slugify(item.original_title || item.original_name)}`}>
           <div className="rounded-lg p-4 group hover:bg-neutral-800 transition-all duration-500 cursor-pointer">
             <div  className='flex items-center gap-x-4'>

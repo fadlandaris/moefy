@@ -1,10 +1,10 @@
 import { MagnifyingGlass, GithubLogo } from "phosphor-react";
 import { PROFILE } from "../assets/assets";
-import { Link } from "react-router-dom";
 import { SetStateAction, useEffect, useState } from "react";
 import { AxiosResponse } from "axios";
 import Api from "../service/Api";
 import TrendingList from "./TrendingList";
+import { logout } from "../firebase";
 
 const SearchBar = () => {
   const [querySearch, setQuerySearch] = useState('');
@@ -42,7 +42,7 @@ const SearchBar = () => {
   };
 
   return (
-    <nav className="mb-10 rounded-full flex justify-between">
+    <nav className="mb-10 rounded-full flex justify-between ">
       <div className="relative">
         <input
           type="text"
@@ -67,23 +67,24 @@ const SearchBar = () => {
           </div>
         </a>
 
-        <Link to={{ pathname: 'profile' }}>
-          <div className="flex gap-x-4 items-center group">
+          <div className="relative last:flex gap-x-4 items-center group cursor-pointer ">
             <div className="relative w-12 h-12 rounded-full overflow-hidden transition-all duration-500">
-              <img src={PROFILE} alt="Profile" className="z-0" />
-              <div className="absolute inset-0 border-t-[3px] border-transparent rounded-full border-green-500 animate-spinSlow z-10"></div>
+              <img src={PROFILE} alt="Profile" className="" />
+              <div className="absolute inset-0 border-t-[3px] rounded-full border-green-700 animate-spinSlow "></div>
             </div>
             <div>
-              <h2>Moefaris</h2>
+              <h2>Username</h2>
               <p className="text-[12px] text-green-400">Online</p>
             </div>
+            <button className="group-hover:flex absolute top-12 -left-3 text-[12px] bg-opacity-60 px-4  py-1 rounded-full bg-red-950 text-red-500 hidden" onClick={() => {logout()}} >
+              Logout
+            </button>
           </div>
-        </Link>
-      </div>
+        </div>
 
       {error && <p>{error}</p>}
       {resultsData.length > 0 && (
-        <div className="absolute z-50 bg-gradient-to-b p-8 from-neutral-950 to-black top-36 rounded-3xl flex flex-col w-[25rem] h-[30rem] overflow-hidden">
+        <div className="animate-slideIn absolute z-50 bg-gradient-to-b p-8 from-neutral-950 to-black rounded-3xl flex flex-col w-[25rem] h-[30rem] overflow-hidden top-32 ">
           <p className="mb-6 text-[12px]">Results : {querySearch}</p>
           <div className="overflow-hidden overflow-y-auto no-scrollbar">
             <TrendingList data={resultsData} variant="search" />

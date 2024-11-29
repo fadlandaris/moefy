@@ -27,7 +27,7 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div className="animate-blurToNone">
     <div className=" grid grid-cols-1 gap-y-8 md:grid-cols-3 gap-x-6 ">
       <div className=" md:col-span-2 ">
         <TrendingCard data={topTrendingData} />
@@ -50,7 +50,7 @@ const Home = () => {
     <div className="mt-10 ">
       <GenreLists/>
     </div>
-    </>
+    </div>
   );
 };
 

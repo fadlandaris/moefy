@@ -8,13 +8,7 @@ export const navLinks:typesData[] = [
     id: 1,
     title: 'watch',
     icon: Popcorn,
-    link: '/'
-  },
-  {
-    id: 2,
-    title: 'people',
-    icon: Cat,
-    link: '/profile'
+    link: '/home'
   },
 ]
 

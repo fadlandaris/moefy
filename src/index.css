@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply text-white bg-black font-poppins md:pt-16 md:pl-32 tracking-wide pb-12
+  @apply text-white bg-black font-poppins tracking-wide 
 }
 
 h1, h2 {
@@ -25,6 +25,10 @@ p {
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.input-style {
+  @apply ring-1 ring-neutral-800 bg-black py-4 px-6 rounded-full mb-6 block text-white text-[12px] w-[25rem]
 }
 
 
